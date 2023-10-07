@@ -181,6 +181,7 @@
     line-height: 70px;
     text-align: center;
     text-decoration: none;
+    
 }
 .ex-12-top-white, .ex-13-top-white {
     position: absolute;
@@ -212,27 +213,63 @@
 /* ESERCIZIO 13 - Anima il bottone, spazio bianco fa giro completo */
 
 .ex-13-button:active .ex-13-top-white {
-    animation: rotateTop 5s linear;
+    animation: rotateTop 5s linear infinite;
 }
 
 .ex-13-button:active .ex-13-bottom-white {
-    animation: rotateBottom 5s linear;
+    animation: rotateBottom 5s linear infinite;
+}
+
+.well {
+    overflow: hidden;
 }
 
 @keyframes rotateTop {
-    from {
-        transform: translate(0);
+    0% {
+        transform: translateX(0);
     }
-    to {
-        transform: translate(-160px);
+    20% {
+        transform: translateX(-75px);
+    }
+    40% {
+        transform: translateX(-75px) translateY(60px);
+    }
+    60% {
+        transform: translateX(150px) translateY(60px);
+    }
+    80% {
+        transform: translateX(150px) translateY(0);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0);
     }
 }
 
+
 @keyframes rotateBottom {
-    from {
-        transform: translate(0);
+    0% {
+        transform: translateX(0) translateY(0);
     }
-    to {
-        transform: translate(160px);
+    20% {
+        transform: translateX(75px) translateY(0);
+    }
+    40% {
+        transform: translateX(75px) translateY(-60px);
+    }
+    60% {
+        transform: translateX(-150px) translateY(-60px);
+    }
+    80% {
+        transform: translateX(-150px) translateY(0);
+    }
+    100% {
+        transform: translateX(0) translateY(0);
     }
 }
+
+
+
+
+
+
